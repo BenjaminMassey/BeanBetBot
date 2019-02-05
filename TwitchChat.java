@@ -42,7 +42,10 @@ public class TwitchChat extends PircBot {
 		bot.sendRawLine("CAP REQ :twitch.tv/commands"); // Need it to parse whispers
 		bot.joinChannel(channel);
 
-		new Thread(new TimeForPoints()).start();
+		TimeForPoints tfp = new TimeForPoints();
+
+		new Thread(tfp).start();
+		tfp.start();
 	}
 
 	public static void deactivate() throws IOException, IrcException {
@@ -54,23 +57,6 @@ public class TwitchChat extends PircBot {
 		// React to a given message
 		
 		// Here are the commands that should be taken action for
-
-		if (message.startsWith("!addquote ")) {
-			QuotesHandler.addQuote(message);
-			messageChat("Added your quote! (#" +
-					(FileHandler.getFileLength("Quotes") - 1)+ ")");
-		}
-
-		if (message.startsWith("!quote"))
-			messageChat(QuotesHandler.getQuote(message));
-
-		if (message.startsWith("!delquote ")) {
-			boolean deleted = QuotesHandler.delQuote(message);
-			if (deleted)
-				messageChat("Deleted!");
-			else
-				messageChat("Failed to delete... D:");
-		}
 
 		if (message.equalsIgnoreCase("!BetGame")) {
 			messageChat("Now you can bet in chat with what I'm playing! "
