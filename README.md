@@ -34,7 +34,7 @@ Google should make all that fairly easy.
 
 Image of the bot's interface:
 
-![Image of the bot's interface](https://i.imgur.com/7UKmmfW.png)
+![Image of the bot's interface](https://i.imgur.com/IkGj4jJ.png)
 
 Usage Example Screenshot:
 

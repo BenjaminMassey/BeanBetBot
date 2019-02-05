@@ -185,7 +185,7 @@ public class GUIHandler extends JFrame {
 
 		// Entry to set the stakes
 		JTextField odds = new JTextField(20);
-		odds.setText("100");
+		odds.setText("50");
 		jp.add(odds);
 
 		JButton setOddsButton = new JButton("Set Odds for A");
